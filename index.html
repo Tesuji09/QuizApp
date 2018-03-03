@@ -1,46 +1,52 @@
 <!DOCTYPE html >
 <html lang='en'>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<title>Jimmy John's Quiz</title>
-	<link rel='stylesheet' href='main.css'>
-	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	<link rel='stylesheet' href='index.css'>
+	<link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 	<div class='header'>
 		<header role='banner'>
 			<h1><span class='j'>J</span>immy <span class='j'>J</span>ohn's Mayo Master Quiz</h1>
 		</header>
-		<main role='main' class ='main mainStyles'>
-			<h2>Welcome to <span class='j'>J</span>immy <span class='j'>J</span>ohn's!</h2>
-			<p>Take a quiz...</p>
-			<button type='button' class='start'>Begin</button>
-		</main>
 	</div>
-	<section role='region' class='quizSection mainStyles' style='display:none;'>
-		<form role='form' class='quiz'>
-			<div class='questionContainer'>
-			</div>
-			<div class='answersContainer'>
-			</div>
-			<div class='footerContainer'>
-			</div>
-		</form>
-	</section>
-	<section role='region' class='correct mainStyles' style='display:none;'>
-		<p>You are Correct!</p> <p class='always'>Leave the Mayo on the bread!</p>
-
-		<button type ='button' class='next'>Next</button>
-	</section>
-	<section role='region' class='incorrect mainStyles' style='display:none;'>
-		<p>You got it wrong :(</p> <p class='always'> Leave the Mayo on the bread!</p>
-		<button type ='button' class='next'>Next</button>
-	</section>
-	<section role='region' class='finalPage mainStyles' style='display:none'>
-		<div class="finalPageContainer">			
+	<main role='main' class='main mainStyles'>
+		<div class='introContainer'>	
+			<h2>Welcome to <span class='j'>J</span>immy <span class='j'>J</span>ohn's!</h2>
+			<h3>Take a quiz...</h3>
+			<button type='button' class='start'>Begin</button>
 		</div>
-	</section>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+  	<section class='quizSection' style='display:none;'>
+  		<form role='form' class='quiz'>
+    			<fieldset>
+      			<div class='questionContainer'>
+      			</div>
+      			<div class='answersContainer'>
+      			</div>
+      			</fieldset>
+  		</form>
+    	<div class='footerContainer'>
+      </div>
+  	</section>
+  	<section role='region' class='correct' style='display:none;'>
+  		<p>You are Correct!</p> <p><em>Leave the Mayo on the bread!</em></p>
+  
+  		<button type ='button' class='next'>Next</button>
+  	</section>
+  	<section class='incorrect' style='display:none;'>
+  		<p>You got it wrong :(</p>
+  		<div class='correctAnswerContainer'></div>
+  		<p><em> Leave the Mayo on the bread!</em></p>
+  		<button type ='button' class='next'>Next</button>
+  	</section>
+  	<section class='finalPage' style='display:none'>
+  		<div class="finalPageContainer">			
+  		</div>
+  	</section>
+	</main>
 </body>
 </html>

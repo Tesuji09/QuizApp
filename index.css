@@ -7,9 +7,7 @@
         vertical-align: baseline;
         background: transparent;
     }
-*:focus{
-	background-color:white;
-}
+
 body {
 	font-family: 'Anton', sans-serif;
 	background-color:black;
@@ -32,10 +30,10 @@ h1 {
 	margin:10px;
 	padding-top:10px;
 	padding-bottom:10px;
-  	display: flex;
-  	flex-direction: column;
-  	justify-content: center;
-  	box-shadow: 5px 5px 20px 10px grey;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-shadow: 5px 5px 20px 10px grey;
 }
 
 h2 {
@@ -46,7 +44,7 @@ h2 {
 	padding-bottom:50px;
 }
 
-main p {
+h3 {
 	font-size:30px;
 }
 
@@ -63,7 +61,7 @@ main p {
 
 }
 
-label:hover, input:focus{
+label:hover, .myAnswer{
 	color:black;
 	background-color:white;
 }
@@ -79,7 +77,7 @@ input[type='radio']{
 	margin-bottom:20px;
 }
 
-.questionContainer p {
+.questionContainer {
 	font-size:25px;
 	padding-bottom:20px;
 }
@@ -89,15 +87,11 @@ input[type='radio']{
 	font-size: 30px;
 }
 
-.always {
-	font-style:italic;
-}
-
-
 
 @media only screen and (min-width:640px) {
 	.mainStyles {
 		margin:80px auto;
+		margin-top:40px;
 		max-width:75%;
 		padding-top:20px;
 		padding-bottom:20px;
@@ -113,27 +107,13 @@ input[type='radio']{
 }
 
 input[type='radio']{
-	margin-top:40px;
+	margin-top:30px;
 	width: 20px;
 	height:20px;
 }
 
+.footerContainer, .finalPageContainer {
+	margin-top:40px;
+	font-size:20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
