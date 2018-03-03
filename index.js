@@ -70,12 +70,13 @@ function showAnswers(questionRef, currentQuestion) {
   let currentQuestionPlusAnswers = QUESTIONLIST[questionRef];
 	let currentAnswers = Object.keys(currentQuestionPlusAnswers[currentQuestion]);
 	let currentValues = Object.values(currentQuestionPlusAnswers[currentQuestion]);
-	const thisAnswer = `<label><input type='radio' name='amount' value='${currentValues[0]}'>${currentAnswers[0]}</label><br>
-					<label><input type='radio' name='amount' value='${currentValues[1]}'>${currentAnswers[1]}</label><br>
-					<label><input type='radio' name='amount' value='${currentValues[2]}'>${currentAnswers[2]}</label><br>
-					<label><input type='radio' name='amount' value='${currentValues[3]}'>${currentAnswers[3]}</label>
-					<input type='submit' class='showCorrect' value='submit'>`;
+	const thisAnswer = `<label id='firstChoice'><input type='radio' name='amount' aria-labelledby='firstChoice' value='${currentValues[0]}'>${currentAnswers[0]}</label><br>
+					<label id='secondChoice'><input type='radio' name='amount' aria-labelledby='secondChoice' value='${currentValues[1]}'>${currentAnswers[1]}</label><br>
+					<label id='thirdChoice'><input type='radio' name='amount' aria-labelledby='thirdChoice' value='${currentValues[2]}'>${currentAnswers[2]}</label><br>
+					<label id='fourthChoice'><input type='radio' name='amount' aria-labelledby='fourthChoice' value='${currentValues[3]}'>${currentAnswers[3]}</label>`;
+    const submitButton = `<input type='submit' class='showCorrect' value='submit'>`
 	$('.answersContainer').append(thisAnswer);
+    $('.submitButtonContainer').append(submitButton)
 }
 function changeSelectedAnswer() {
 	$('input[type="radio"]').change(e => {
@@ -102,6 +103,7 @@ function submitAnswer() {
 			removeQuestion();
 			removeAnswers();
 			removeCounter();
+            removeSubmitButton();
 			hideQuestion();
 			if (answerValue === 'true') {
 				STATE.correct++;
@@ -219,6 +221,10 @@ function removeQuestion() {
 
 function removeAnswers() {
 	$('.answersContainer').contents().remove();
+}
+
+function removeSubmitButton() {
+    $('.submitButtonContainer').contents().remove();
 }
 function removeFinalPage() {
 	$('.finalPage').contents().remove();
